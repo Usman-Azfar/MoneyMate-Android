@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#5BAB60</color>
+    <color name="red">#E4291B</color>
+    <color name="lightGreen">#9EEFA1</color>
+    <color name="lightRed">#EF7266</color>
+    <color name="gray">#A6A0A0</color>
+    <color name="splash_background">#6DF873</color>  <!-- Blue background -->
+    <color name="splash_primary">#2196F3</color>
+</resources>
