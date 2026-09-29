@@ -18,7 +18,9 @@ object CsvReportGenerator {
     fun generate(context: Context, transactions: List<Transaction>, filterSummary: String): Boolean {
         val sb = StringBuilder()
         sb.append(context.getString(R.string.app_display_name)).append(" - Transaction Report\n")
-        sb.append("Generated on ${timestampFormat.format(Date())}\n")
+        // Escaped like every other field: the timestamp itself contains a comma ("29 Sep 2026, 10:16 AM"),
+        // which would otherwise split this line across two spreadsheet cells.
+        sb.append(escape("Generated on ${timestampFormat.format(Date())}")).append('\n')
         sb.append("${escape(filterSummary)}\n\n")
 
         sb.append("Date,Description,Category,Type,Amount,Person,Due Date,Settled\n")

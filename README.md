@@ -42,23 +42,51 @@ The app is written in Kotlin with traditional Android Views (no Jetpack Compose)
 
 ## Screenshots
 
-| Splash | Login | Home |
-|---|---|---|
-| ![Splash screen](screenshots/splash.png) | ![Login screen](screenshots/login.png) | ![Home screen](screenshots/home.png) |
+### Getting started & dashboard
 
-| Statistics + Ask MoneyMate AI | AI suggestions | AI answer |
+| Splash | Login | Sign Up |
 |---|---|---|
-| ![Statistics with the Ask MoneyMate AI card](screenshots/statistics_ai.png) | ![Ask MoneyMate AI dialog with suggested questions](screenshots/ai_ask.png) | ![Ask MoneyMate AI answering a question](screenshots/ai_answer.png) |
+| ![Splash screen](screenshots/splash.png) | ![Login screen](screenshots/login.png) | ![Sign up screen](screenshots/signup.png) |
 
-| Transaction History | Settings | Smart Voice setting |
+| Home dashboard | Adding an expense (category selected) | |
 |---|---|---|
-| ![History screen](screenshots/history.png) | ![Settings screen](screenshots/settings.png) | ![Smart Voice Input setting](screenshots/smart_voice.png) |
+| ![Home dashboard with balance, income, expense, debts and overdue banner](screenshots/home.png) | ![Add a Transaction form with the Health category selected](screenshots/add_transaction.png) | |
 
-| Sign Up | Budget view | |
+### Statistics & budgets
+
+| Budget: On Track | Spending by category | Ask MoneyMate AI card |
 |---|---|---|
-| ![Sign up screen](screenshots/signup.png) | ![Statistics budget view](screenshots/statistics.png) | |
+| ![Monthly budget card showing On Track](screenshots/statistics_budget.png) | ![Donut chart and ranked category breakdown](screenshots/statistics_chart.png) | ![Statistics screen with the Ask MoneyMate AI card](screenshots/statistics_ai.png) |
 
-*Debug build on a Pixel 8 emulator, dark theme. Balances are test data. The AI answer is a real Gemini response to that test data.*
+### Ask MoneyMate AI
+
+| Suggested questions | AI answer |
+|---|---|
+| ![Ask MoneyMate AI dialog with suggested questions](screenshots/ai_ask.png) | ![Ask MoneyMate AI answering a question](screenshots/ai_answer.png) |
+
+### History, filters & alerts
+
+| Transaction History | Filter dialog | Filtered result |
+|---|---|---|
+| ![Transaction History list](screenshots/history.png) | ![Filter dialog with Expense Only and a from-date](screenshots/history_filter.png) | ![History filtered to expenses from 15 Sep](screenshots/history_filtered.png) |
+
+| Alerts screen | System notifications |
+|---|---|
+| ![Alerts screen with daily and weekly budget-exceeded entries](screenshots/alerts.png) | ![Android notification shade with MoneyMate budget alerts](screenshots/budget_notification.png) |
+
+### Reports
+
+| PDF report | CSV report (opened as a spreadsheet) |
+|---|---|
+| ![Generated PDF transaction report](screenshots/report_pdf.png) | ![Generated CSV report shown in a spreadsheet grid](screenshots/report_csv.png) |
+
+### Settings
+
+| Settings | Smart Voice Input setting |
+|---|---|
+| ![Settings screen](screenshots/settings.png) | ![Smart Voice Input setting](screenshots/smart_voice.png) |
+
+*Debug build on a Pixel 8 emulator, dark theme, using demo data. The budget alerts and notifications were triggered by the app's real alert logic. The PDF and CSV are the actual files the app exported, rendered for display. The AI answer is a real Gemini response.*
 
 ## Features
 
