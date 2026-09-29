@@ -39,3 +39,7 @@ app/build/
 
 # Internal working notes (kept local, not part of the published project)
 session_context.md
+
+# Signing keys - never commit
+*.jks
+*.keystore

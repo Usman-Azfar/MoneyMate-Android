@@ -14,6 +14,18 @@ val localProperties = Properties().apply {
 }
 val geminiApiKey: String = localProperties.getProperty("GEMINI_API_KEY", "")
 val geminiModel: String = localProperties.getProperty("GEMINI_MODEL", "gemini-3.5-flash-lite")
+// Release builds (the publicly downloadable APK) use a separate, disposable demo key — never the
+// personal debug key above. Blank = AI features shown as unavailable in the release APK.
+val geminiApiKeyRelease: String = localProperties.getProperty("GEMINI_API_KEY_RELEASE", "")
+
+// Release signing, also from local.properties. If any value is missing, the release build is simply
+// left unsigned instead of failing, so the project still builds for anyone who clones it.
+val releaseStoreFile: String? = localProperties.getProperty("RELEASE_STORE_FILE")
+val releaseStorePassword: String? = localProperties.getProperty("RELEASE_STORE_PASSWORD")
+val releaseKeyAlias: String? = localProperties.getProperty("RELEASE_KEY_ALIAS")
+val releaseKeyPassword: String? = localProperties.getProperty("RELEASE_KEY_PASSWORD")
+val hasReleaseSigning = listOf(releaseStoreFile, releaseStorePassword, releaseKeyAlias, releaseKeyPassword)
+    .all { !it.isNullOrBlank() && !it.startsWith("PUT_") } && file(releaseStoreFile!!).exists()
 
 android {
     namespace = "com.yourname.expensetrackerapp"
@@ -32,8 +44,21 @@ android {
         buildConfigField("String", "GEMINI_MODEL", "\"$geminiModel\"")
     }
 
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = file(releaseStoreFile!!)
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (hasReleaseSigning) signingConfig = signingConfigs.getByName("release")
+            buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKeyRelease\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

@@ -17,6 +17,18 @@
 
 ---
 
+## Download & try it
+
+**[⬇ Download the latest APK](https://github.com/Usman-Azfar/MoneyMate-Android/releases/latest)** (Android 7.0 or newer)
+
+1. Open the link on your Android phone and download `MoneyMate-vX.Y.Z.apk` from **Assets**.
+2. Open the file. If Android asks, allow your browser or file manager to **install unknown apps**. Google Play Protect may show a warning because the app isn't from the Play Store; choose **Install anyway**.
+3. Sign up with email (you'll get a verification link) or tap **Continue with Google**.
+
+The AI features (Smart Voice Input and Ask MoneyMate AI) run on a shared demo Gemini quota. If they say they're unavailable, the daily free quota has run out. Everything else keeps working, and voice entry falls back to the on-device parser.
+
+---
+
 ## Overview
 
 MoneyMate is a full-featured personal finance tracker for Android. It goes beyond a typical "add expense, see total" app:
