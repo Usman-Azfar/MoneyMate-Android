@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class SplashActivity : AppCompatActivity() {
 
     // Splash screen display duration in milliseconds
-    private val splashDuration = 4000L  // 4 seconds
+    private val splashDuration = 4000L  // Splash screen display duration in milliseconds
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,29 +28,26 @@ class SplashActivity : AppCompatActivity() {
     private fun addAnimations() {
         // Get references to views
         val appLogo = findViewById<ImageView>(R.id.appLogo)
-        val appName = findViewById<TextView>(R.id.appName)
-        val studentInfo = findViewById<TextView>(R.id.studentInfo)
+        val appTagline = findViewById<TextView>(R.id.appTagline)
 
-        // Load animations from XML (we'll create these next)
+        // Load animations from XML
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         val slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up)
-        val rotate = AnimationUtils.loadAnimation(this, R.anim.rotate)
-
-
 
         // Apply animations
         appLogo.startAnimation(fadeIn)
-        appLogo.startAnimation(rotate)
-        appName.startAnimation(slideUp)
-        studentInfo.startAnimation(slideUp)
+        appTagline.startAnimation(slideUp)
     }
 
     private fun navigateToMainActivity() {
         // Handler posts a delayed action to the main thread
         Handler(Looper.getMainLooper()).postDelayed({
-            // Create an Intent to start MainActivity
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            val targetClass = if (AuthRepository.currentUser != null) {
+                MainActivity::class.java
+            } else {
+                LoginActivity::class.java
+            }
+            startActivity(Intent(this, targetClass))
 
             // Finish SplashActivity so user can't go back to it
             finish()

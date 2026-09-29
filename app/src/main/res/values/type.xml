@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ==================================================================
+         DESIGN SYSTEM — TYPE SCALE
+
+         Every style below inherits its font family from TextAppearance.App.
+         Base (or .Base.Medium / .Base.Black). To change the app's font
+         everywhere, change those three base styles' android:fontFamily
+         (and the matching item in themes.xml) — nothing else needs editing.
+
+         Uses Android's built-in system font aliases (sans-serif family,
+         Roboto-backed, bundled on every device) rather than a Downloadable
+         Font, so there's no runtime dependency on Google Play Services and
+         nothing here depends on a certificate hash that couldn't be
+         verified in this environment. See README2.md for how to swap in a
+         custom .ttf later.
+         ================================================================== -->
+
+    <style name="TextAppearance.App.Base" parent="android:TextAppearance">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.App.Base.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.App.Base.Black">
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <!-- Display: the big hero balance number. Medium weight, not black/bold —
+         a quieter, more restrained tone reads as more trustworthy for money. -->
+    <style name="TextAppearance.App.DisplayLarge" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">34sp</item>
+    </style>
+
+    <!-- Headline: splash app name -->
+    <style name="TextAppearance.App.HeadlineSmall" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- Titles: toolbar / section headers -->
+    <style name="TextAppearance.App.TitleLarge" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextAppearance.App.TitleMedium" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Labels: buttons, mini-card headings, small emphatic text -->
+    <style name="TextAppearance.App.LabelLarge" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.App.LabelSmall" parent="TextAppearance.App.Base.Medium">
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Body: input text, list item description -->
+    <style name="TextAppearance.App.BodyLarge" parent="TextAppearance.App.Base">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.App.BodyMedium" parent="TextAppearance.App.Base">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <!-- Caption: date / category meta text -->
+    <style name="TextAppearance.App.BodySmall" parent="TextAppearance.App.Base">
+        <item name="android:textSize">12sp</item>
+    </style>
+</resources>

@@ -1,3 +1,309 @@
 <resources>
-    <string name="app_name">ExpenseTrackerApp</string>
+    <!-- Single source of truth for the app's name: change these two values to rebrand the whole
+         app in one place (launcher icon, splash, headers, PDF report, etc. all reference them
+         instead of hardcoding text). app_name feeds the launcher label so it stays short;
+         app_display_name + app_tagline are the fuller brand name shown in-app. -->
+    <string name="app_name">MoneyMate</string>
+    <string name="app_display_name">MoneyMate</string>
+    <string name="app_tagline">A smart solution to manage income, expenses and debts.</string>
+
+    <!-- App Lock -->
+    <string name="label_app_lock">App Lock</string>
+    <string name="label_app_lock_desc">Require a passcode or fingerprint to open the app</string>
+    <string name="label_app_lock_on">On</string>
+    <string name="label_app_lock_off">Off</string>
+    <string name="btn_change_passcode">Change Passcode</string>
+    <string name="btn_turn_off_app_lock">Turn Off App Lock</string>
+    <string name="label_unlock_with_fingerprint">Unlock with Fingerprint</string>
+    <string name="label_unlock_with_fingerprint_desc">Use your fingerprint instead of the passcode</string>
+    <string name="title_enter_passcode">Enter Passcode</string>
+    <string name="title_create_passcode">Create a Passcode</string>
+    <string name="title_confirm_passcode">Confirm Passcode</string>
+    <string name="title_current_passcode">Enter Current Passcode</string>
+    <string name="subtitle_create_passcode">This passcode will be required to open %1$s</string>
+    <string name="subtitle_confirm_passcode">Enter it once more to confirm</string>
+    <string name="subtitle_current_passcode_change">Verify your current passcode to continue</string>
+    <string name="subtitle_current_passcode_disable">Enter your passcode to turn off App Lock</string>
+    <string name="error_passcode_mismatch">Passcodes don\'t match — try again</string>
+    <string name="error_passcode_incorrect">Incorrect passcode</string>
+    <string name="error_passcode_locked_out">Too many attempts. Try again in %1$d s</string>
+    <string name="toast_passcode_set">Passcode set</string>
+    <string name="toast_passcode_changed">Passcode changed</string>
+    <string name="toast_app_lock_disabled">App Lock turned off</string>
+    <string name="btn_forgot_passcode">Forgot Passcode?</string>
+    <string name="title_reset_passcode">Reset Passcode</string>
+    <string name="msg_reset_passcode_intro">To reset your passcode, verify it\'s really you first.</string>
+    <string name="label_signed_in_as">Signed in as %1$s</string>
+    <string name="btn_verify_and_continue">Verify &amp; Continue</string>
+    <string name="content_desc_biometric_unlock">Unlock with fingerprint</string>
+    <string name="content_desc_backspace">Delete last digit</string>
+    <string name="biometric_prompt_title">Unlock %1$s</string>
+    <string name="biometric_prompt_subtitle">Use your fingerprint to continue</string>
+    <string name="biometric_not_available">Fingerprint unlock isn\'t available on this device</string>
+    <string name="label_security">Security</string>
+
+    <string name="label_total_balance">Total Balance</string>
+    <string name="label_total_balance_for_period">Total Balance • %1$s</string>
+    <string name="label_total_income">Total Income</string>
+    <string name="label_total_expense">Total Expense</string>
+    <string name="label_total_payable">Payable</string>
+    <string name="label_total_receivable">Receivable</string>
+    <string name="placeholder_amount">0.00</string>
+    <string name="placeholder_transaction_count">0 transactions</string>
+    <plurals name="transaction_count">
+        <item quantity="one">%d transaction</item>
+        <item quantity="other">%d transactions</item>
+    </plurals>
+    <plurals name="debt_overdue_count">
+        <item quantity="one">⚠ %d debt overdue</item>
+        <item quantity="other">⚠ %d debts overdue</item>
+    </plurals>
+
+    <string name="hint_description">Description</string>
+    <string name="hint_debt_note">Note (optional)</string>
+    <string name="hint_amount">Amount</string>
+    <string name="hint_amount_with_symbol">Amount (%1$s)</string>
+    <string name="hint_date">Date</string>
+    <string name="hint_due_date">Due Date</string>
+    <string name="hint_payable_to">Payable To</string>
+    <string name="hint_receivable_from">Receivable From</string>
+
+    <string name="radio_income">Income</string>
+    <string name="radio_expense">Expense</string>
+    <string name="radio_debt">Debt</string>
+    <string name="radio_payable">Payable</string>
+    <string name="radio_receivable">Receivable</string>
+
+    <string name="btn_add_income">Add Income</string>
+    <string name="btn_add_expense">Add Expense</string>
+    <string name="btn_add_payable">Add Payable</string>
+    <string name="btn_add_receivable">Add Receivable</string>
+    <string name="btn_select_type">Select a Type Above</string>
+    <string name="error_enter_person_name">Please enter who this debt is with</string>
+    <string name="toast_debt_added">Debt added successfully</string>
+    <string name="toast_debt_settled">Marked as settled</string>
+    <string name="toast_debt_unsettled">Marked as outstanding</string>
+    <string name="label_settled">Settled</string>
+    <string name="label_overdue">Overdue</string>
+    <string name="label_due">Due %1$s</string>
+    <string name="label_payable_to">Payable to %1$s</string>
+    <string name="label_receivable_from">Receivable from %1$s</string>
+
+    <string name="label_recent_transactions">Recent Transactions</string>
+    <string name="label_add_transaction">Add a Transaction</string>
+    <string name="content_desc_voice_input">Add transaction by voice</string>
+    <string name="prompt_voice_transaction">Speak your transaction, e.g. \"Spent 500 on groceries\"</string>
+    <string name="toast_voice_no_recognizer">No speech recognizer app found on this device</string>
+    <string name="toast_voice_no_speech">Didn\'t catch that — please try again</string>
+    <string name="toast_voice_amount_missing">Couldn\'t catch the amount — please check it</string>
+    <string name="toast_voice_applied">Filled in from your voice — please review before adding</string>
+    <string name="label_home_subtitle">Track your spending, grow your savings</string>
+    <string name="content_desc_delete">Delete transaction</string>
+    <string name="content_desc_edit">Edit transaction</string>
+    <string name="title_edit_transaction">Edit Transaction</string>
+    <string name="btn_save">Save</string>
+    <string name="toast_transaction_updated">Transaction updated</string>
+    <string name="error_negative_balance_edit">This change would result in a negative balance</string>
+
+    <string name="menu_search">Search</string>
+    <string name="menu_filter">Filter</string>
+    <string name="menu_theme_to_dark">Switch to Dark Mode</string>
+    <string name="menu_theme_to_light">Switch to Light Mode</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_history">History</string>
+    <string name="nav_statistics">Statistics</string>
+    <string name="nav_notifications">Alerts</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="title_history">Transaction History</string>
+    <string name="title_statistics">Financial Statistics</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="btn_view_all">View All Transactions</string>
+    <string name="label_select_period">Period</string>
+    <string name="label_outstanding_debts">Outstanding Debts</string>
+    <string name="label_overdue_count">Overdue</string>
+    <string name="label_income_amount">Income Amount</string>
+    <string name="label_income_amount_auto">Income Amount (from transactions)</string>
+    <string name="label_income_amount_auto_with_symbol">Income Amount • %1$s (from transactions)</string>
+    <string name="label_expected_spend">Expected Amount to Spend</string>
+    <string name="label_expected_spend_with_symbol">Expected Amount to Spend (%1$s)</string>
+    <string name="btn_save_budget">Save Budget</string>
+    <string name="label_actual_spent">Actual Spent</string>
+    <string name="label_remaining">Remaining</string>
+    <string name="label_savings">Savings</string>
+    <string name="label_category_breakdown">Spending by Category</string>
+    <string name="status_on_track">On track</string>
+    <string name="status_over_budget">Over budget</string>
+    <string name="empty_budget_prompt">No %1$s budget set yet. Set your income and expected spend below to start tracking.</string>
+    <string name="empty_notifications">No alerts yet. You\'ll see a notification here if you ever go over a budget you\'ve set.</string>
+    <string name="btn_clear_all">Clear All</string>
+    <string name="error_enter_valid_amounts">Please enter a valid expected spend amount</string>
+    <string name="toast_budget_saved">%1$s budget saved</string>
+
+    <string name="label_week_start_date">Week Start Date</string>
+    <string name="label_week_range">Week</string>
+    <string name="label_select_month">Select Month</string>
+    <string name="label_select_year">Select Year</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="label_spending_chart">Spending Breakdown</string>
+
+    <string name="menu_download_report">Download Report</string>
+    <string name="toast_report_saved">Report saved to Downloads</string>
+    <string name="toast_report_failed">Failed to save report</string>
+    <string name="toast_storage_permission_required">Storage permission is required to save the report</string>
+
+    <!-- Auth -->
+    <string name="default_web_client_id">949046178369-v46v2rhvn4haeklv0iqkamc3n10p50af.apps.googleusercontent.com</string>
+    <string name="title_login">Log In</string>
+    <string name="title_signup">Sign Up</string>
+    <string name="tagline_login">Welcome back! Log in to keep track of your money.</string>
+    <string name="tagline_signup">Create an account to start tracking your money.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_signup">Sign Up</string>
+    <string name="btn_forgot_password">Forgot Password?</string>
+    <string name="btn_continue_with_google">Continue with Google</string>
+    <string name="label_or">OR</string>
+    <string name="prompt_no_account">Don\'t have an account? Sign Up</string>
+    <string name="prompt_have_account">Already have an account? Log In</string>
+    <string name="title_reset_password">Reset Password</string>
+    <string name="msg_reset_password">Enter the email address associated with your account and we\'ll send you a link to reset your password.</string>
+    <string name="btn_send_reset_email">Send Reset Email</string>
+    <string name="toast_reset_email_sent">Password reset email sent</string>
+    <string name="error_enter_email">Please enter your email</string>
+    <string name="error_enter_valid_credentials">Please enter a valid email and password (6+ characters)</string>
+    <string name="error_passwords_dont_match">Passwords don\'t match</string>
+    <string name="menu_logout">Log Out</string>
+    <string name="title_verify_email">Verify Your Email</string>
+    <string name="msg_verification_email_sent">We\'ve sent a verification link to %1$s. Please verify your email, then log in.</string>
+    <string name="msg_email_not_verified">Your email %1$s hasn\'t been verified yet. Please check your inbox for the verification link before logging in.</string>
+    <string name="btn_resend_verification">Resend Email</string>
+    <string name="toast_verification_resent">Verification email resent</string>
+
+    <!-- Settings -->
+    <string name="title_settings">Settings</string>
+    <string name="label_profile">Profile</string>
+    <string name="btn_edit_name">Edit Name</string>
+    <string name="btn_change_password">Change Password</string>
+    <string name="title_edit_name">Edit Name</string>
+    <string name="hint_display_name">Display Name</string>
+    <string name="toast_name_updated">Name updated</string>
+    <string name="error_enter_name">Please enter a name</string>
+    <string name="title_change_password">Change Password</string>
+    <string name="msg_change_password">We\'ll send a password reset link to %1$s.</string>
+    <string name="btn_send">Send</string>
+    <string name="label_appearance">Appearance</string>
+    <string name="mode_light">Light</string>
+    <string name="mode_dark">Dark</string>
+    <string name="mode_system">Auto</string>
+    <string name="label_categories">Categories</string>
+    <string name="btn_manage_income_categories">Manage Income Categories</string>
+    <string name="btn_manage_expense_categories">Manage Expense Categories</string>
+    <string name="label_currency">Currency</string>
+    <string name="label_notifications_settings">Notifications</string>
+    <string name="label_budget_alerts">Budget Alerts</string>
+    <string name="label_budget_alerts_desc">Get notified when you go over a budget</string>
+    <string name="label_voice_input">Voice Input</string>
+    <!-- Ask MoneyMate AI (Statistics) -->
+    <string name="label_ai_advisor">Ask MoneyMate AI</string>
+    <string name="label_ai_advisor_desc">Ask anything about the period selected above: where your money went, how to save, or how it compares with the previous period.</string>
+    <string name="btn_ask_ai">Ask a question</string>
+    <string name="btn_ai_ask">Ask</string>
+    <string name="btn_close">Close</string>
+    <string name="label_ai_about_period">About: %1$s</string>
+    <string name="label_today">Today</string>
+    <string name="label_ai_try_asking">Try asking</string>
+    <string name="hint_ai_question">Ask about this period…</string>
+    <string name="label_ai_you">You</string>
+    <string name="label_ai_role">MoneyMate AI</string>
+    <string name="label_ai_thinking">Analyzing your data…</string>
+    <string name="label_ai_privacy_note">This period\'s transactions and your question are sent to Google Gemini to generate the answer. AI answers can be wrong, so double-check important numbers.</string>
+    <string name="error_ai_empty_question">Type a question first</string>
+    <string name="error_ai_offline">You\'re offline. Connect to the internet and try again.</string>
+    <string name="error_ai_timeout">That took too long. Please try again.</string>
+    <string name="error_ai_busy">MoneyMate AI is busy right now. Please try again in a minute.</string>
+    <string name="error_ai_failed">Couldn\'t get an answer. Please try again.</string>
+    <string name="error_ai_blocked">No answer could be generated for that question. Try rephrasing it.</string>
+    <string name="ai_suggestion_summary">Summarize this period</string>
+    <string name="ai_suggestion_top_spend">Where did most of my money go?</string>
+    <string name="ai_suggestion_save">How can I save more?</string>
+    <string name="ai_suggestion_compare">Compare with the previous period</string>
+    <string name="ai_suggestion_budget">Am I on track with my budget?</string>
+
+    <string name="label_smart_voice">Smart Voice Input</string>
+    <string name="label_smart_voice_desc">Uses Google Gemini to understand free-form speech (including Urdu / Roman Urdu) and write a clean description. Your spoken text and category names are sent to Google. Falls back to the offline parser when offline, slow or unavailable.</string>
+    <string name="label_smart_voice_unavailable">Unavailable in this build — no Gemini API key configured. The offline parser is used.</string>
+    <string name="toast_voice_understanding">Understanding…</string>
+    <string name="toast_voice_smart_fallback">Smart Voice unavailable — used the offline parser</string>
+    <string name="label_auto_add_voice">Auto-Add Voice Transactions</string>
+    <string name="label_auto_add_voice_desc">Save automatically when you use the mic — no need to tap Add. Manual entries always need Add.</string>
+    <string name="label_debts">Debts</string>
+    <string name="label_include_debts">Include Debts in Income/Expense</string>
+    <string name="label_include_debts_desc">Count borrowed money as income and lent money as expense, flipping once settled. When off, debts only show under Outstanding Debts.</string>
+    <string name="label_reports_sync">Reports &amp; Sync</string>
+    <string name="label_default_download_format">Default Download Format</string>
+    <string name="title_default_download_format">Default Download Format</string>
+    <string name="msg_default_download_format">Choose a format to use every time, or Always Ask to pick each time you download.</string>
+    <string name="option_always_ask">Always Ask</string>
+    <string name="format_pdf">PDF</string>
+    <string name="format_csv">CSV / Excel</string>
+    <string name="title_choose_format">Download Report As</string>
+    <string name="btn_sync_now">Sync Now</string>
+    <string name="content_desc_download_report">Download report</string>
+    <string name="toast_sync_complete">Sync complete</string>
+    <string name="toast_syncing">Syncing…</string>
+    <string name="label_support">Support</string>
+    <string name="btn_user_guide">User Guide</string>
+    <string name="label_about">About</string>
+    <string name="label_account">Account</string>
+    <string name="btn_logout_settings">Log Out</string>
+    <string name="label_no_name">No name set</string>
+    <string name="label_home_screen">Home Screen</string>
+    <string name="label_balance_period">Balance Period</string>
+    <string name="title_home_period">Home Screen Period</string>
+    <string name="label_start_date">Start Date</string>
+    <string name="label_end_date">End Date</string>
+    <string name="toast_home_period_saved">Home screen period updated</string>
+    <string name="msg_budget_unavailable_for_period">Budgets track a recurring cycle, so they aren\'t available for All Time or Custom Duration. Switch to Daily, Weekly, Monthly or Yearly to set one.</string>
+
+    <!-- Categories screen -->
+    <string name="title_categories">Categories</string>
+    <string name="hint_new_category">New category name</string>
+    <string name="btn_add">Add</string>
+    <string name="toast_category_exists">That category already exists</string>
+    <string name="toast_category_added">Category added</string>
+    <string name="toast_category_deleted">Category deleted</string>
+    <string name="error_category_min">You must keep at least one category</string>
+    <string name="error_category_blank">Please enter a category name</string>
+    <string name="content_desc_delete_category">Delete category</string>
+
+    <!-- Currency picker -->
+    <string name="title_currency">Select Currency</string>
+    <string name="hint_search_currency">Search currency</string>
+
+    <!-- User guide -->
+    <string name="title_user_guide">User Guide</string>
+    <string name="guide_title_add">Adding a Transaction</string>
+    <string name="guide_body_add">On the Home screen, first choose Income, Expense or Debt at the top of the form — the rest of the fields adapt to your choice. Fill in the details, then tap the Add button. The record date can be backdated but never set in the future.</string>
+    <string name="guide_title_edit">Editing &amp; Deleting</string>
+    <string name="guide_body_edit">Every transaction in Transaction History has Edit and Delete buttons. Home\'s recent-transactions preview only offers Delete — open History for full editing.</string>
+    <string name="guide_title_history">History &amp; Filters</string>
+    <string name="guide_body_history">History lists every transaction. Use the search icon to find one by description, or the filter icon to narrow by type or date range.</string>
+    <string name="guide_title_statistics">Statistics &amp; Budgets</string>
+    <string name="guide_body_statistics">Pick a Daily, Weekly, Monthly or Yearly period, set an expected spend, and Statistics compares it against your actual spending with a category breakdown chart.</string>
+    <string name="guide_title_categories">Categories</string>
+    <string name="guide_body_categories">Manage your own Income and Expense categories from Settings — add new ones or remove ones you no longer use. Past transactions keep their original category even if it\'s later removed.</string>
+    <string name="guide_title_currency">Currency</string>
+    <string name="guide_body_currency">Pick your preferred currency in Settings. This only changes the symbol shown throughout the app and reports — it does not convert past amounts.</string>
+    <string name="guide_title_notifications">Notifications &amp; Budget Alerts</string>
+    <string name="guide_body_notifications">You\'ll get an alert if a budget is exceeded, or if spending exceeds income in a cycle. Turn these off anytime from Settings.</string>
+    <string name="guide_title_sync">Offline &amp; Sync</string>
+    <string name="guide_body_sync">The app works fully offline — changes are saved locally and automatically synced to the cloud once you\'re back online. You can also trigger a manual sync from Settings.</string>
+    <string name="guide_title_debts">Tracking Debts</string>
+    <string name="guide_body_debts">Choose Debt on Home to record money you owe (Payable) or money owed to you (Receivable), along with the other person\'s name and a due date. Outstanding debts show on Home and in Statistics, turn red once overdue, and can be checked off as Settled from History or Home once paid or collected. Debts never affect your Total Balance — only settled income and expenses do.</string>
 </resources>

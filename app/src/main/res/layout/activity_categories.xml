@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/title_categories"
+        app:titleTextColor="@color/on_surface"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/stroke_hairline"
+        android:background="@color/outline_variant"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/typeToggleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioTypeIncome"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/tap_target_min"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/bg_toggle_income"
+            android:gravity="center"
+            android:text="@string/radio_income"
+            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+            android:textColor="@color/text_toggle_income" />
+
+        <RadioButton
+            android:id="@+id/radioTypeExpense"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/tap_target_min"
+            android:layout_weight="1"
+            android:button="@null"
+            android:background="@drawable/bg_toggle_expense"
+            android:gravity="center"
+            android:text="@string/radio_expense"
+            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+            android:textColor="@color/text_toggle_expense" />
+
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/space_16"
+        android:layout_marginEnd="@dimen/space_16"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/typeToggleGroup"
+        app:layout_constraintBottom_toTopOf="@id/addRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/addRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/space_16"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newCategoryInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_new_category"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="@dimen/radius_s"
+            app:boxCornerRadiusTopEnd="@dimen/radius_s"
+            app:boxCornerRadiusBottomStart="@dimen/radius_s"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_s"
+            app:boxStrokeColor="@color/primary"
+            app:hintTextColor="@color/primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newCategoryInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                android:textColor="@color/on_surface" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space
+            android:layout_width="@dimen/space_12"
+            android:layout_height="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addCategoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            app:backgroundTint="@color/primary"
+            android:text="@string/btn_add"
+            android:textColor="@color/on_primary"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+            app:cornerRadius="@dimen/radius_m" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

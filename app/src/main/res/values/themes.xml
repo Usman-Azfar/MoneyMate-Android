@@ -1,23 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- ==================================================================
+         DESIGN SYSTEM — APP THEME
+
+         Wires the semantic color tokens (res/values/colors.xml +
+         res/values-night/colors.xml) into Material3's standard theme
+         attributes. Because both color files define the same names and
+         this theme only ever references those names, ONE themes.xml
+         serves both light and dark mode — the OS resource qualifier
+         system does the switching. res/values-night/themes.xml only
+         overrides the couple of things that must genuinely differ
+         (status/navigation bar icon contrast, splash background).
+
+         The app-wide font family is set once here via android:fontFamily
+         — change it here to change the default font everywhere a
+         TextAppearance.App.* style doesn't already pin a specific one.
+         ================================================================== -->
     <style name="Base.Theme.ExpenseTrackerApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Brand -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/on_secondary_container</item>
+
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorOnTertiary">@color/on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/on_tertiary_container</item>
+
+        <!-- Surfaces -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnBackground">@color/on_background</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutline">@color/outline</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+
+        <!-- Error / expense -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_error</item>
+        <item name="colorErrorContainer">@color/error_container</item>
+        <item name="colorOnErrorContainer">@color/on_error_container</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Typography: single place to change the app's font family -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.BodyLarge</item>
     </style>
 
     <style name="Theme.ExpenseTrackerApp" parent="Base.Theme.ExpenseTrackerApp" />
 
-    <style name="ToolbarTitleStyle" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/black</item>
+    <!-- Home screen: the toolbar is painted with the brand gradient, so the status
+         bar is pinned to the gradient's start color with light (white) icons to
+         blend seamlessly into it. -->
+    <style name="Theme.ExpenseTrackerApp.Home">
+        <item name="android:statusBarColor">@color/hero_card_start</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <!-- NEW: Splash Screen Theme -->
-    <style name="SplashTheme" parent="Theme.Material3.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/splash_background</item>
-        <item name="android:windowBackground">@color/splash_background</item>
+    <!-- Login / Sign up: full-bleed gradient header behind the status bar, same
+         treatment as Home for a consistent brand moment on every entry screen. -->
+    <style name="Theme.ExpenseTrackerApp.Auth">
+        <item name="android:statusBarColor">@color/hero_card_start</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="TextAppearance.App.TitleLarge">
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <!-- Splash screen theme: plain white, full-bleed, dark icons — matches the logo artwork's
+         fixed light-background colors (see splash_background/splash_tagline_text in colors.xml). -->
+    <style name="SplashTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/splash_gradient_start</item>
+        <item name="android:navigationBarColor">@color/splash_gradient_end</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
         <item name="android:windowFullscreen">true</item>
+        <!-- Without this, a fullscreen window leaves the camera-cutout strip at the top painted
+             black instead of continuing the gradient. -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="p">shortEdges</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
 </resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/space_12">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/categoryColorDot"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="@dimen/space_8"
+            android:background="@drawable/bg_chart_dot" />
+
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+            android:textColor="@color/on_surface"
+            android:text="Category" />
+
+        <TextView
+            android:id="@+id/categoryPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_8"
+            android:textAppearance="@style/TextAppearance.App.BodySmall"
+            android:textColor="@color/on_surface_variant"
+            android:text="0%" />
+
+        <TextView
+            android:id="@+id/categoryAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+            android:textColor="@color/on_surface"
+            android:text="$0.00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="@dimen/space_4"
+        android:orientation="horizontal"
+        android:background="@color/surface_variant">
+
+        <View
+            android:id="@+id/categoryBarFill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@color/primary" />
+
+        <View
+            android:id="@+id/categoryBarEmpty"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+    </LinearLayout>
+
+</LinearLayout>

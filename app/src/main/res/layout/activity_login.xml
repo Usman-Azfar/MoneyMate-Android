@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Brand gradient header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_auth_header_gradient"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/space_40"
+            android:paddingBottom="@dimen/space_40"
+            android:paddingStart="@dimen/space_24"
+            android:paddingEnd="@dimen/space_24">
+
+            <FrameLayout
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:background="@drawable/bg_badge_circle_translucent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="$"
+                    android:textColor="@color/on_hero_card"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/appNameBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:background="@drawable/bg_brand_chip"
+                android:paddingStart="@dimen/space_20"
+                android:paddingEnd="@dimen/space_20"
+                android:paddingTop="@dimen/space_8"
+                android:paddingBottom="@dimen/space_8"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.App.DisplayLarge"
+                tools:text="MoneyMate" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:alpha="0.85"
+                android:text="@string/tagline_login"
+                android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                android:textColor="@color/on_hero_card" />
+
+        </LinearLayout>
+
+        <!-- Form sheet, overlapping the header for a seamless swoop -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-24dp"
+            android:background="@drawable/bg_auth_panel"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/space_32"
+            android:paddingBottom="@dimen/space_24"
+            android:paddingStart="@dimen/space_24"
+            android:paddingEnd="@dimen/space_24">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_login"
+                android:textAppearance="@style/TextAppearance.App.TitleLarge"
+                android:textColor="@color/on_surface" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:hint="@string/hint_email"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="@dimen/radius_s"
+                app:boxCornerRadiusTopEnd="@dimen/radius_s"
+                app:boxCornerRadiusBottomStart="@dimen/radius_s"
+                app:boxCornerRadiusBottomEnd="@dimen/radius_s"
+                app:boxStrokeColor="@color/primary"
+                app:hintTextColor="@color/primary"
+                app:startIconDrawable="@drawable/ic_mail"
+                app:startIconTint="@color/on_surface_variant">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                    android:textColor="@color/on_surface" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_12"
+                android:hint="@string/hint_password"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="@dimen/radius_s"
+                app:boxCornerRadiusTopEnd="@dimen/radius_s"
+                app:boxCornerRadiusBottomStart="@dimen/radius_s"
+                app:boxCornerRadiusBottomEnd="@dimen/radius_s"
+                app:boxStrokeColor="@color/primary"
+                app:hintTextColor="@color/primary"
+                app:startIconDrawable="@drawable/ic_lock"
+                app:startIconTint="@color/on_surface_variant"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                    android:textColor="@color/on_surface" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forgotPasswordText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/space_8"
+                android:padding="@dimen/space_4"
+                android:text="@string/btn_forgot_password"
+                android:textAppearance="@style/TextAppearance.App.BodySmall"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/space_16"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/on_primary"
+                android:text="@string/btn_login"
+                android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/radius_m"
+                app:elevation="@dimen/elevation_raised" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/stroke_hairline"
+                    android:layout_weight="1"
+                    android:background="@color/outline_variant" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_12"
+                    android:text="@string/label_or"
+                    android:textAppearance="@style/TextAppearance.App.LabelSmall"
+                    android:textColor="@color/on_surface_variant" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/stroke_hairline"
+                    android:layout_weight="1"
+                    android:background="@color/outline_variant" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/googleSignInBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="@dimen/space_24"
+                android:text="@string/btn_continue_with_google"
+                android:textColor="@color/on_surface"
+                android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_google_logo"
+                app:iconTint="@null"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/space_12"
+                app:cornerRadius="@dimen/radius_m"
+                app:strokeColor="@color/outline"
+                app:strokeWidth="@dimen/stroke_thick"
+                app:backgroundTint="@color/surface" />
+
+            <TextView
+                android:id="@+id/goToSignUpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_32"
+                android:padding="@dimen/space_4"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="@string/prompt_no_account"
+                android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

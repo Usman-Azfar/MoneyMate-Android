@@ -1,12 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="green">#5BAB60</color>
-    <color name="red">#E4291B</color>
-    <color name="lightGreen">#9EEFA1</color>
-    <color name="lightRed">#EF7266</color>
-    <color name="gray">#A6A0A0</color>
-    <color name="splash_background">#6DF873</color>  <!-- Blue background -->
-    <color name="splash_primary">#2196F3</color>
+    <!-- ==================================================================
+         DESIGN SYSTEM — COLOR TOKENS (LIGHT MODE)
+
+         This file and res/values-night/colors.xml together are the single
+         source of truth for every color used in the app. Both files define
+         the SAME color names — only the hex values differ. Android picks
+         the matching file automatically based on the system's day/night
+         setting, so themes.xml and every layout only ever reference these
+         semantic names and never a raw hex value.
+
+         Vibrant, colorful fintech palette: violet-to-blue brand gradient,
+         teal secondary, amber tertiary, and saturated (but readable)
+         income/expense colors.
+         ================================================================== -->
+
+    <!-- Brand / primary — vivid indigo/violet -->
+    <color name="primary">#4F46E5</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#E0E1FF</color>
+    <color name="on_primary_container">#2D1B8F</color>
+
+    <!-- Secondary accent — teal -->
+    <color name="secondary">#0D9488</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#CCFBF1</color>
+    <color name="on_secondary_container">#0F3D3A</color>
+
+    <!-- Tertiary accent — warm amber, used for highlights/badges -->
+    <color name="tertiary">#D97706</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#FEF3C7</color>
+    <color name="on_tertiary_container">#7C2D12</color>
+
+    <!-- Surfaces — soft indigo-tinted neutrals, not stark gray -->
+    <color name="background">#F5F5FD</color>
+    <color name="on_background">#181A2A</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_surface">#181A2A</color>
+    <color name="surface_variant">#EEF0FB</color>
+    <color name="on_surface_variant">#63667D</color>
+    <color name="outline">#E1E3F3</color>
+    <color name="outline_variant">#ECEDF9</color>
+
+    <!-- Income / expense semantics — vivid, confident colors -->
+    <color name="income">#16A34A</color>
+    <color name="on_income">#FFFFFF</color>
+    <color name="income_container">#DCFCE7</color>
+    <color name="on_income_container">#0F4A26</color>
+
+    <color name="expense">#E11D48</color>
+    <color name="on_expense">#FFFFFF</color>
+    <color name="expense_container">#FFE1E8</color>
+    <color name="on_expense_container">#88112E</color>
+
+    <!-- Material3 "error" role mapped onto expense semantics -->
+    <color name="error">#E11D48</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFE1E8</color>
+    <color name="on_error_container">#88112E</color>
+
+    <!-- Hero balance card / auth header: a bold 3-stop violet -> indigo -> blue
+         gradient, used on Home's hero card, the login/signup header, and the
+         splash background, so the brand reads consistently everywhere. -->
+    <color name="hero_card_start">#7C3AED</color>
+    <color name="hero_card_center">#4F46E5</color>
+    <color name="hero_card_end">#2563EB</color>
+    <color name="on_hero_card">#FFFFFF</color>
+
+    <!-- Splash screen only — intentionally identical in both colors.xml and values-night/colors.xml.
+         The provided logo artwork has its own fixed colors (dark wordmark, colored icon) baked in
+         for a light background, so the splash background/tagline must not follow the day/night
+         switch like every other token here — otherwise dark mode would render the logo's dark
+         text on a dark background and make it unreadable. The gradient (see bg_splash.xml) is
+         kept light for the same reason — a soft violet-to-blue wash, not a saturated one. -->
+    <color name="splash_gradient_start">#C8BAFF</color>
+    <color name="splash_gradient_center">#E4DEFF</color>
+    <color name="splash_gradient_end">#B8CFFF</color>
+    <color name="splash_tagline_text">#43465E</color>
+
+    <!-- Two-tone "MoneyMate" brand wordmark ("Money"/"Mate"), matching the logo artwork — used
+         wherever the app name is shown as its own standalone brand mark (Login/Signup headers,
+         Home's toolbar). Fixed in both colors.xml and values-night/colors.xml since these always
+         sit on the fixed-white brand_chip_background below, never on a theme-varying surface. -->
+    <color name="brand_money">#4F46E5</color>
+    <color name="brand_mate">#181A2A</color>
+    <color name="brand_chip_background">#FFFFFF</color>
+
+    <!-- Category chart palette — flat categorical accents, used only for chart slices/legend
+         dots so they intentionally avoid the income/expense semantic hues above. Same values
+         in light and dark since they're drawn as solid fills, not text-on-background. -->
+    <color name="chart_1">#7C3AED</color>
+    <color name="chart_2">#2563EB</color>
+    <color name="chart_3">#0D9488</color>
+    <color name="chart_4">#D97706</color>
+    <color name="chart_5">#DB2777</color>
+    <color name="chart_6">#059669</color>
+    <color name="chart_7">#EA580C</color>
+    <color name="chart_8">#4338CA</color>
 </resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingTop="@dimen/space_40"
+    android:paddingBottom="@dimen/space_24">
+
+    <FrameLayout
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        android:background="@drawable/bg_avatar_circle">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_lock"
+            app:tint="@color/on_primary"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/lockTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_20"
+        android:text="@string/title_enter_passcode"
+        android:textAppearance="@style/TextAppearance.App.TitleLarge"
+        android:textColor="@color/on_surface" />
+
+    <TextView
+        android:id="@+id/lockSubtitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:textAppearance="@style/TextAppearance.App.BodyMedium"
+        android:textColor="@color/on_surface_variant"
+        tools:text="Signed in as alex@example.com" />
+
+    <include
+        layout="@layout/pin_dots_row"
+        android:layout_marginTop="@dimen/space_32" />
+
+    <TextView
+        android:id="@+id/lockErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_16"
+        android:textAppearance="@style/TextAppearance.App.BodyMedium"
+        android:textColor="@color/expense"
+        android:visibility="invisible"
+        tools:text="Incorrect passcode" />
+
+    <Space
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <include layout="@layout/keypad_numeric" />
+
+    <TextView
+        android:id="@+id/forgotPasscodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_24"
+        android:padding="@dimen/space_8"
+        android:text="@string/btn_forgot_passcode"
+        android:textAppearance="@style/TextAppearance.App.LabelLarge"
+        android:textColor="@color/primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground" />
+
+</LinearLayout>

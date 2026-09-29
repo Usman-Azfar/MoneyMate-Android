@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:title="@string/title_settings"
+        app:titleTextColor="@color/on_surface"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/stroke_hairline"
+        android:background="@color/outline_variant"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_16">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="@dimen/avatar_size"
+                            android:layout_height="@dimen/avatar_size"
+                            android:background="@drawable/bg_avatar_circle">
+
+                            <TextView
+                                android:id="@+id/avatarText"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:textColor="@color/on_primary"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                tools:text="A" />
+
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/space_16"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/profileNameText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.App.TitleMedium"
+                                android:textColor="@color/on_surface"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="Alex Morgan" />
+
+                            <TextView
+                                android:id="@+id/profileEmailText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:textAppearance="@style/TextAppearance.App.BodySmall"
+                                android:textColor="@color/on_surface_variant"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                tools:text="alex@example.com" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/editNameBtn"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/btn_edit_name"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                            android:textColor="@color/primary"
+                            app:cornerRadius="@dimen/radius_m"
+                            app:strokeColor="@color/outline" />
+
+                        <Space
+                            android:layout_width="@dimen/space_12"
+                            android:layout_height="1dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/changePasswordBtn"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/btn_change_password"
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                            android:textColor="@color/primary"
+                            app:cornerRadius="@dimen/radius_m"
+                            app:strokeColor="@color/outline" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Appearance -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_appearance" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/themeToggleGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_12"
+                    app:selectionRequired="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThemeLight"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mode_light"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThemeDark"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mode_dark"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThemeSystem"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mode_system"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.App.LabelLarge" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Home Screen -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_home_screen" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:id="@+id/homePeriodRow"
+                    style="@style/SettingsRow"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <TextView
+                        style="@style/SettingsRowLabel"
+                        android:text="@string/label_balance_period" />
+
+                    <TextView
+                        android:id="@+id/homePeriodSummaryText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                        android:textColor="@color/on_surface_variant"
+                        tools:text="All Time" />
+
+                    <ImageView
+                        style="@style/SettingsRowChevron"
+                        android:contentDescription="@null" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Debts -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_debts" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_16">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_include_debts"
+                            android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                            android:textColor="@color/on_surface" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:text="@string/label_include_debts_desc"
+                            android:textAppearance="@style/TextAppearance.App.BodySmall"
+                            android:textColor="@color/on_surface_variant" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/includeDebtsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/primary"
+                        app:trackTint="@color/primary_container" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Voice Input -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_voice_input" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/smartVoiceRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_16">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_smart_voice"
+                            android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                            android:textColor="@color/on_surface" />
+
+                        <TextView
+                            android:id="@+id/smartVoiceDescText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:text="@string/label_smart_voice_desc"
+                            android:textAppearance="@style/TextAppearance.App.BodySmall"
+                            android:textColor="@color/on_surface_variant" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/smartVoiceSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/primary"
+                        app:trackTint="@color/primary_container" />
+
+                </LinearLayout>
+
+                <View style="@style/SettingsRowDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_16">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_auto_add_voice"
+                            android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                            android:textColor="@color/on_surface" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:text="@string/label_auto_add_voice_desc"
+                            android:textAppearance="@style/TextAppearance.App.BodySmall"
+                            android:textColor="@color/on_surface_variant" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/autoAddVoiceSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/primary"
+                        app:trackTint="@color/primary_container" />
+
+                </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Categories -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_categories" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <LinearLayout
+                        android:id="@+id/manageIncomeCategoriesRow"
+                        style="@style/SettingsRow">
+
+                        <TextView
+                            style="@style/SettingsRowLabel"
+                            android:text="@string/btn_manage_income_categories" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsRowDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/manageExpenseCategoriesRow"
+                        style="@style/SettingsRow">
+
+                        <TextView
+                            style="@style/SettingsRowLabel"
+                            android:text="@string/btn_manage_expense_categories" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Currency -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_currency" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:id="@+id/currencyRow"
+                    style="@style/SettingsRow"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <TextView
+                        style="@style/SettingsRowLabel"
+                        android:text="@string/label_currency" />
+
+                    <TextView
+                        android:id="@+id/currentCurrencyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                        android:textColor="@color/on_surface_variant"
+                        tools:text="USD ($)" />
+
+                    <ImageView
+                        style="@style/SettingsRowChevron"
+                        android:contentDescription="@null" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Notifications -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_notifications_settings" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_16">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_budget_alerts"
+                            android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                            android:textColor="@color/on_surface" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:text="@string/label_budget_alerts_desc"
+                            android:textAppearance="@style/TextAppearance.App.BodySmall"
+                            android:textColor="@color/on_surface_variant" />
+
+                    </LinearLayout>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/budgetAlertsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/primary"
+                        app:trackTint="@color/primary_container" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Security -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_security" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <LinearLayout
+                        android:id="@+id/appLockRow"
+                        style="@style/SettingsRow">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                                android:textColor="@color/on_surface"
+                                android:text="@string/label_app_lock" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:text="@string/label_app_lock_desc"
+                                android:textAppearance="@style/TextAppearance.App.BodySmall"
+                                android:textColor="@color/on_surface_variant" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/appLockStatusText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/space_8"
+                            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                            android:textColor="@color/on_surface_variant"
+                            tools:text="Off" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/biometricRowDivider"
+                        style="@style/SettingsRowDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/biometricRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/space_16"
+                        android:paddingBottom="@dimen/space_16">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_unlock_with_fingerprint"
+                                android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                                android:textColor="@color/on_surface" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/space_4"
+                                android:text="@string/label_unlock_with_fingerprint_desc"
+                                android:textAppearance="@style/TextAppearance.App.BodySmall"
+                                android:textColor="@color/on_surface_variant" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/biometricSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/primary"
+                            app:trackTint="@color/primary_container" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Reports & Sync -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_reports_sync" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <LinearLayout
+                        android:id="@+id/defaultFormatRow"
+                        style="@style/SettingsRow">
+
+                        <TextView
+                            style="@style/SettingsRowLabel"
+                            android:text="@string/label_default_download_format" />
+
+                        <TextView
+                            android:id="@+id/defaultFormatText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/space_8"
+                            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                            android:textColor="@color/on_surface_variant"
+                            tools:text="Always Ask" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsRowDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/syncNowRow"
+                        style="@style/SettingsRow">
+
+                        <TextView
+                            style="@style/SettingsRowLabel"
+                            android:text="@string/btn_sync_now" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Support -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_support" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="@dimen/elevation_card"
+                app:strokeColor="@color/outline_variant"
+                app:strokeWidth="@dimen/stroke_hairline">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16">
+
+                    <LinearLayout
+                        android:id="@+id/userGuideRow"
+                        style="@style/SettingsRow">
+
+                        <TextView
+                            style="@style/SettingsRowLabel"
+                            android:text="@string/btn_user_guide" />
+
+                        <ImageView
+                            style="@style/SettingsRowChevron"
+                            android:contentDescription="@null" />
+
+                    </LinearLayout>
+
+                    <View style="@style/SettingsRowDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:paddingTop="@dimen/space_16"
+                        android:paddingBottom="@dimen/space_16">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                style="@style/SettingsRowLabel"
+                                android:text="@string/label_about" />
+
+                            <TextView
+                                android:id="@+id/aboutVersionText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.App.BodyMedium"
+                                android:textColor="@color/on_surface_variant"
+                                tools:text="v1.0" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:text="@string/app_tagline"
+                            android:textAppearance="@style/TextAppearance.App.BodySmall"
+                            android:textColor="@color/on_surface_variant" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Account -->
+            <TextView
+                style="@style/SettingsSectionLabel"
+                android:text="@string/label_account" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logoutBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="@string/btn_logout_settings"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.App.LabelLarge"
+                android:textColor="@color/expense"
+                app:cornerRadius="@dimen/radius_m"
+                app:strokeColor="@color/expense" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        layout="@layout/bottom_nav_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

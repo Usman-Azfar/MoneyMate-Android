@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home's hero balance card: bold 3-stop brand gradient with two soft
+     translucent "blob" accents peeking from the corners for visual depth. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="@color/hero_card_start"
+                android:centerColor="@color/hero_card_center"
+                android:endColor="@color/hero_card_end" />
+            <corners android:radius="@dimen/radius_l" />
+        </shape>
+    </item>
+    <item
+        android:width="160dp"
+        android:height="160dp"
+        android:gravity="top|end"
+        android:top="-70dp"
+        android:end="-60dp">
+        <shape android:shape="oval">
+            <solid android:color="#1AFFFFFF" />
+        </shape>
+    </item>
+    <item
+        android:width="120dp"
+        android:height="120dp"
+        android:gravity="bottom|start"
+        android:bottom="-50dp"
+        android:start="-40dp">
+        <shape android:shape="oval">
+            <solid android:color="#12FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

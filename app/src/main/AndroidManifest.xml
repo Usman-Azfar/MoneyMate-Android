@@ -2,7 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- Lets us detect whether a speech-recognition app is installed (voice transaction entry),
+         required for queryIntentActivities to see other apps under API 30+ package visibility. -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.action.RECOGNIZE_SPEECH" />
+        </intent>
+    </queries>
+
     <application
+        android:name=".ExpenseTrackerApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,7 +40,70 @@
         </activity>
 
         <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp.Auth"/>
+
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp.Auth"/>
+
+        <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/Theme.ExpenseTrackerApp.Home"/>
+
+        <activity
+            android:name=".TransactionsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".StatisticsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".CategoriesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".CurrencyPickerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".UserGuideActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".LockScreenActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".PasscodeSetupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ExpenseTrackerApp"/>
+
+        <activity
+            android:name=".PasscodeResetActivity"
             android:exported="false"
             android:theme="@style/Theme.ExpenseTrackerApp"/>
 

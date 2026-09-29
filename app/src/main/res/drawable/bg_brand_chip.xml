@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A small fixed-white pill sitting behind the two-tone "MoneyMate" brand text (see BrandName.kt)
+     wherever it's shown on a colored/gradient background, so the logo's two-tone wordmark colors
+     — designed for a light background — stay legible instead of blending into the color behind them. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/brand_chip_background" />
+    <corners android:radius="@dimen/radius_pill" />
+</shape>

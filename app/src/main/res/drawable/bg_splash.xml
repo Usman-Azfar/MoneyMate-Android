@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Splash background: a soft violet -> near-white -> blue diagonal wash in the brand's own hue
+     family. Kept deliberately light: the logo artwork is transparent with a purple "Money" and
+     near-black "Mate" wordmark, which would disappear on a saturated or dark gradient. Used both
+     as the layout background and the SplashTheme windowBackground, so there's no white flash
+     before the layout inflates. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:type="linear"
+        android:angle="315"
+        android:startColor="@color/splash_gradient_start"
+        android:centerColor="@color/splash_gradient_center"
+        android:endColor="@color/splash_gradient_end" />
+</shape>

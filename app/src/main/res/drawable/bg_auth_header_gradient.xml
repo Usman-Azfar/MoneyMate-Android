@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Login / Sign up header: same brand gradient as Home's hero card, rounded
+     only at the bottom so the form panel below can overlap it seamlessly. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="@color/hero_card_start"
+                android:centerColor="@color/hero_card_center"
+                android:endColor="@color/hero_card_end" />
+            <corners
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"
+                android:bottomLeftRadius="@dimen/radius_xl"
+                android:bottomRightRadius="@dimen/radius_xl" />
+        </shape>
+    </item>
+    <item
+        android:width="180dp"
+        android:height="180dp"
+        android:gravity="top|end"
+        android:top="-90dp"
+        android:end="-70dp">
+        <shape android:shape="oval">
+            <solid android:color="#1AFFFFFF" />
+        </shape>
+    </item>
+    <item
+        android:width="130dp"
+        android:height="130dp"
+        android:gravity="top|start"
+        android:top="30dp"
+        android:start="-70dp">
+        <shape android:shape="oval">
+            <solid android:color="#12FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

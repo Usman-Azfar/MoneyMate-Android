@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ==================================================================
+         DESIGN SYSTEM — REUSABLE VIEW STYLES
+
+         Small structural styles for list-style screens (Settings and
+         anywhere else that needs a tappable "label + chevron" row grouped
+         inside a card). See values/type.xml for text-appearance styles.
+         ================================================================== -->
+
+    <style name="SettingsSectionLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/space_16</item>
+        <item name="android:layout_marginTop">@dimen/space_20</item>
+        <item name="android:layout_marginBottom">@dimen/space_8</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.TitleMedium</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="SettingsRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingTop">@dimen/space_16</item>
+        <item name="android:paddingBottom">@dimen/space_16</item>
+    </style>
+
+    <style name="SettingsRowLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.BodyLarge</item>
+        <item name="android:textColor">@color/on_surface</item>
+    </style>
+
+    <style name="SettingsRowChevron">
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:src">@drawable/ic_chevron_right</item>
+    </style>
+
+    <style name="SettingsRowDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/stroke_hairline</item>
+        <item name="android:background">@color/outline_variant</item>
+    </style>
+
+    <!-- App Lock: numeric keypad button shared by the lock screen and passcode setup screen.
+         Plain <Button> tags get auto-inflated as MaterialButton under this app's Material theme,
+         which applies its own backgroundTint on top of android:background — rather than fight
+         that, backgroundTint is set to the primary color here deliberately, with white text to
+         match, instead of the plain gray circle bg_keypad_button.xml was drawn for. -->
+    <style name="KeypadButton">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.App.HeadlineSmall</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:background">@drawable/bg_keypad_button</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

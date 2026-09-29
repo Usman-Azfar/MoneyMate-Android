@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ==================================================================
+         DESIGN SYSTEM — COLOR TOKENS (DARK MODE)
+
+         Same names as res/values/colors.xml, different values. See that
+         file for the full explanation of how this pairing works.
+         ================================================================== -->
+
+    <!-- Brand / primary -->
+    <color name="primary">#A5B4FC</color>
+    <color name="on_primary">#1E1B4B</color>
+    <color name="primary_container">#3730A3</color>
+    <color name="on_primary_container">#E0E1FF</color>
+
+    <!-- Secondary accent -->
+    <color name="secondary">#5EEAD4</color>
+    <color name="on_secondary">#042F2E</color>
+    <color name="secondary_container">#0F5C54</color>
+    <color name="on_secondary_container">#CCFBF1</color>
+
+    <!-- Tertiary accent -->
+    <color name="tertiary">#FBBF24</color>
+    <color name="on_tertiary">#452B00</color>
+    <color name="tertiary_container">#78350F</color>
+    <color name="on_tertiary_container">#FEF3C7</color>
+
+    <!-- Surfaces -->
+    <color name="background">#100F1E</color>
+    <color name="on_background">#E9E9F7</color>
+    <color name="surface">#191830</color>
+    <color name="on_surface">#E9E9F7</color>
+    <color name="surface_variant">#26264A</color>
+    <color name="on_surface_variant">#A6A6C6</color>
+    <color name="outline">#34335C</color>
+    <color name="outline_variant">#282750</color>
+
+    <!-- Income / expense semantics -->
+    <color name="income">#4ADE80</color>
+    <color name="on_income">#052E13</color>
+    <color name="income_container">#14532D</color>
+    <color name="on_income_container">#BBF7D0</color>
+
+    <color name="expense">#FB7185</color>
+    <color name="on_expense">#3B0A17</color>
+    <color name="expense_container">#4C0519</color>
+    <color name="on_expense_container">#FFD7DE</color>
+
+    <!-- Material3 "error" role mapped onto expense semantics -->
+    <color name="error">#FB7185</color>
+    <color name="on_error">#3B0A17</color>
+    <color name="error_container">#4C0519</color>
+    <color name="on_error_container">#FFD7DE</color>
+
+    <!-- Hero card / auth header: same brand gradient family, deepened
+         slightly so it still reads as a raised card on a dark screen. -->
+    <color name="hero_card_start">#5B21B6</color>
+    <color name="hero_card_center">#4338CA</color>
+    <color name="hero_card_end">#1D4ED8</color>
+    <color name="on_hero_card">#F5F5FF</color>
+
+    <!-- Splash screen only — deliberately the SAME values as the light colors.xml; see the
+         comment there for why. -->
+    <color name="splash_gradient_start">#C8BAFF</color>
+    <color name="splash_gradient_center">#E4DEFF</color>
+    <color name="splash_gradient_end">#B8CFFF</color>
+    <color name="splash_tagline_text">#43465E</color>
+
+    <!-- Deliberately the SAME values as the light colors.xml; see the comment there. -->
+    <color name="brand_money">#4F46E5</color>
+    <color name="brand_mate">#181A2A</color>
+    <color name="brand_chip_background">#FFFFFF</color>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ==================================================================
+         DESIGN SYSTEM — SPACING / SHAPE / SIZE TOKENS
+
+         Layouts reference these instead of hardcoded dp values, so the
+         spacing rhythm and corner rounding of the whole app can be tuned
+         from this one file.
+         ================================================================== -->
+
+    <!-- Spacing scale -->
+     <dimen name="space_0">0dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+     <dimen name="space_28">28dp</dimen>
+    <dimen name="space_32">32dp</dimen>
+    <dimen name="space_40">40dp</dimen>
+
+    <!-- Corner radius scale -->
+    <dimen name="radius_s">12dp</dimen>
+    <dimen name="radius_m">16dp</dimen>
+    <dimen name="radius_l">20dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
+    <dimen name="radius_pill">100dp</dimen>
+
+    <!-- Stroke widths -->
+    <dimen name="stroke_hairline">1dp</dimen>
+    <dimen name="stroke_thick">1.5dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_card">1dp</dimen>
+    <dimen name="elevation_raised">6dp</dimen>
+
+    <!-- Icon / control sizes -->
+    <dimen name="icon_size_s">18dp</dimen>
+    <dimen name="icon_size_m">24dp</dimen>
+    <dimen name="tap_target_min">48dp</dimen>
+
+    <!-- Height of Home's "Recent Transactions" list — sized to show ~2 cards at a time, with
+         the rest reachable by scrolling within that fixed window. -->
+    <dimen name="recent_transactions_height">210dp</dimen>
+
+    <!-- Icon badge sizes used on Home's hero card, income/expense mini cards,
+         and the auth header logo mark. -->
+    <dimen name="badge_size_s">36dp</dimen>
+    <dimen name="badge_size_m">44dp</dimen>
+    <dimen name="avatar_size">72dp</dimen>
+</resources>

@@ -17,6 +17,9 @@ captures/
 .DS_Store
 Thumbs.db
 
+# Firebase config — contains project-specific keys, never commit this to a public repo
+app/google-services.json
+
 # Build artifacts
 *.apk
 *.aar
@@ -33,3 +36,6 @@ Thumbs.db
 
 # Generated files
 app/build/
+
+# Internal working notes (kept local, not part of the published project)
+session_context.md

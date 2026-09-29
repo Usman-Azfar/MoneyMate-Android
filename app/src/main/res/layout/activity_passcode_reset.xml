@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/title_reset_passcode"
+        app:titleTextColor="@color/on_surface"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="@dimen/space_24"
+        android:paddingEnd="@dimen/space_24"
+        android:paddingTop="@dimen/space_40"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:background="@drawable/bg_avatar_circle">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_lock"
+                app:tint="@color/on_primary"
+                android:contentDescription="@null" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20"
+            android:gravity="center"
+            android:text="@string/msg_reset_passcode_intro"
+            android:textAppearance="@style/TextAppearance.App.BodyLarge"
+            android:textColor="@color/on_surface" />
+
+        <TextView
+            android:id="@+id/resetEmailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+            android:textColor="@color/on_surface_variant"
+            tools:text="Signed in as alex@example.com" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/resetPasswordInputLayout"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_24"
+            android:hint="@string/hint_password"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="@dimen/radius_s"
+            app:boxCornerRadiusTopEnd="@dimen/radius_s"
+            app:boxCornerRadiusBottomStart="@dimen/radius_s"
+            app:boxCornerRadiusBottomEnd="@dimen/radius_s"
+            app:boxStrokeColor="@color/primary"
+            app:hintTextColor="@color/primary"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/resetPasswordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textAppearance="@style/TextAppearance.App.BodyLarge"
+                android:textColor="@color/on_surface" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetVerifyBtn"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="@dimen/space_16"
+            android:backgroundTint="@color/primary"
+            android:textColor="@color/on_primary"
+            android:text="@string/btn_verify_and_continue"
+            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+            android:textAllCaps="false"
+            app:cornerRadius="@dimen/radius_m" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetGoogleBtn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="@dimen/space_24"
+            android:text="@string/btn_continue_with_google"
+            android:textAppearance="@style/TextAppearance.App.LabelLarge"
+            android:textColor="@color/on_surface"
+            android:textAllCaps="false"
+            app:icon="@drawable/ic_google_logo"
+            app:iconGravity="textStart"
+            app:iconTint="@null"
+            app:strokeColor="@color/outline"
+            app:cornerRadius="@dimen/radius_m"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

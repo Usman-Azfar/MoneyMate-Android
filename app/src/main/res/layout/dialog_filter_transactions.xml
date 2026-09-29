@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/space_24"
+    android:paddingEnd="@dimen/space_24"
+    android:paddingTop="@dimen/space_8"
+    android:paddingBottom="@dimen/space_8">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction Type"
+        android:textAppearance="@style/TextAppearance.App.LabelSmall"
+        android:textColor="@color/on_surface_variant" />
+
+    <RadioGroup
+        android:id="@+id/filterTypeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_4"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/filterTypeAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All Transactions" />
+
+        <RadioButton
+            android:id="@+id/filterTypeIncome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Income Only" />
+
+        <RadioButton
+            android:id="@+id/filterTypeExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expense Only" />
+
+        <RadioButton
+            android:id="@+id/filterTypeDebt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debt Only" />
+
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/stroke_hairline"
+        android:layout_marginTop="@dimen/space_16"
+        android:background="@color/outline_variant" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="Date Range"
+        android:textAppearance="@style/TextAppearance.App.LabelSmall"
+        android:textColor="@color/on_surface_variant" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/filterFromDateBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="From: Any"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+        <Space
+            android:layout_width="@dimen/space_8"
+            android:layout_height="1dp" />
+
+        <Button
+            android:id="@+id/filterToDateBtn"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="To: Any"
+            android:textAllCaps="false"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/filterClearDatesBtn"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/space_4"
+        android:text="Clear Dates"
+        android:textAllCaps="false"
+        android:textColor="@color/primary" />
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Search Item -->
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/menu_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!-- Filter Item -->
+    <item
+        android:id="@+id/action_filter"
+        android:title="@string/menu_filter"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="ifRoom" />
+
+    <!-- Download Report Item -->
+    <item
+        android:id="@+id/action_download"
+        android:title="@string/menu_download_report"
+        android:icon="@drawable/ic_download"
+        app:showAsAction="ifRoom" />
+
+</menu>

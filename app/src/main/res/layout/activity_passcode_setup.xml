@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/surface"
+        android:elevation="0dp"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="@color/on_surface"
+        app:titleTextAppearance="@style/ToolbarTitleStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/space_40"
+        android:paddingBottom="@dimen/space_24"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/setupTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.App.TitleLarge"
+            android:textColor="@color/on_surface"
+            tools:text="Create a Passcode" />
+
+        <TextView
+            android:id="@+id/setupSubtitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_marginStart="@dimen/space_24"
+            android:layout_marginEnd="@dimen/space_24"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+            android:textColor="@color/on_surface_variant"
+            tools:text="This passcode will be required to open MoneyMate" />
+
+        <include
+            layout="@layout/pin_dots_row"
+            android:layout_marginTop="@dimen/space_32" />
+
+        <TextView
+            android:id="@+id/setupErrorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_16"
+            android:textAppearance="@style/TextAppearance.App.BodyMedium"
+            android:textColor="@color/expense"
+            android:visibility="invisible"
+            tools:text="Passcodes don't match — try again" />
+
+        <Space
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <include layout="@layout/keypad_numeric" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
